@@ -5,6 +5,11 @@ const { Logo } = require('./utils/logoUtils.js');
 const questions = [
     {
         type: 'input',
+        name: 'text',
+        message: 'Type logo text',
+    },
+    {
+        type: 'input',
         name: 'textColor',
         message: 'Choose text color',
     },
