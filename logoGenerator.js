@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { Logo } = require('./utils/logoUtils.js'); // I'll create this file later
+const { Logo } = require('./utils/logoUtils.js');
 
 const questions = [
     {
@@ -33,8 +33,10 @@ function writeToFile(fileName, data) {
 
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        const newLogo = //function(answers);
-        writeToFile('logo.svg', newLogo) 
+        const logo = new Logo(answers.textColor, answers.shape, answers.shapeColor);
+        const svgLogo = logo.generateSVG();
+        
+        writeToFile('logo.svg', svgLogo); 
     })
 };
 
