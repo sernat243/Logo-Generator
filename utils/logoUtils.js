@@ -1,5 +1,6 @@
 class Logo {
-    constructor(textColor, shape, shapeColor) {
+    constructor(text, textColor, shape, shapeColor) {
+        this.text = text;
         this.textColor = textColor;
         this.shape = shape;
         this.shapeColor = shapeColor;

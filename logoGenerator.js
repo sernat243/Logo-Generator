@@ -38,7 +38,7 @@ function writeToFile(fileName, data) {
 
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        const logo = new Logo(answers.textColor, answers.shape, answers.shapeColor);
+        const logo = new Logo(answers.text, answers.textColor, answers.shape, answers.shapeColor);
         const svgLogo = logo.generateSVG();
         
         writeToFile('logo.svg', svgLogo); 
