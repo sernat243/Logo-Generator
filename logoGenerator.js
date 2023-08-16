@@ -21,3 +21,21 @@ const questions = [
     },
 ];
 
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Generated logo.svg")
+        }
+    })
+};
+
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        const newLogo = //function(answers);
+        writeToFile('logo.svg', newLogo) 
+    })
+};
+
+init();
