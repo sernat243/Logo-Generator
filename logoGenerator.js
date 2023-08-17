@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const inquirer = require('inquirer');
 const { Logo } = require('./utils/logoUtils.js');
 
@@ -26,12 +27,20 @@ const questions = [
     },
 ];
 
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => {
+function writeToFile(outputFolder, fileName, data) {
+    const outputPath = path.join(__dirname, outputFolder);
+    
+    if (!fs.existsSync(outputPath)) {
+        fs.mkdirSync(outputPath);
+    }
+    
+    const outputFile = path.join(outputPath, fileName);
+
+    fs.writeFile(outputFile, data, (err) => {
         if (err) {
             console.log(err);
         } else {
-            console.log("Generated logo.svg")
+            console.log(`Generated ${fileName}`)
         }
     })
 };
@@ -40,8 +49,8 @@ function init() {
     inquirer.prompt(questions).then((answers) => {
         const logo = new Logo(answers.text, answers.textColor, answers.shape, answers.shapeColor);
         const svgLogo = logo.generateSVG();
-        
-        writeToFile('logo.svg', svgLogo); 
+
+        writeToFile('examples', 'logo.svg', svgLogo); 
     })
 };
 
