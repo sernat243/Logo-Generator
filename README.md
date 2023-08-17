@@ -28,7 +28,7 @@ Logo Generator is a Node.js command-line application that allows users to create
 2. Follow the prompts to choose text color, shape type, shape color, and logo text.
 3. The application will generate an SVG logo and save it in the 'examples' folder.
 
-[Click Here]() to see a step by step video walkthrough of the application functionality
+[Click Here](https://watch.screencastify.com/v/A6DV7jUgLKx9HUwXTCP8) to see a step by step video walkthrough of the application functionality
 
 ## Contributing
 
@@ -39,7 +39,7 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 To run the tests for the shape classes, execute the following command:
 
 ```bash
-npm test
+npx jest shapes.test.js
 ```
 ## Questions
 If you have any questions or issues, please [contact me](mailto:gs.devprog@gmail.com).
