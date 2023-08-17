@@ -12,11 +12,11 @@ class Logo {
     let shape = '';
 
     if (this.shapeType === 'circle') {
-      shape = new Circle().getSvgElement();
+      shape = new Circle().getSvgElement(this.shapeColor);
     } else if (this.shapeType === 'square') {
-      shape = new Square().getSvgElement();
+      shape = new Square().getSvgElement(this.shapeColor);
     } else if (this.shapeType === 'triangle') {
-      shape = new Triangle().getSvgElement();
+      shape = new Triangle().getSvgElement(this.shapeColor);
     }
 
     const svgTemplate = `
